@@ -16,14 +16,17 @@ const main = async()=>{
                 const id = await listarLugares( lugares );
                 const lugarSel = lugares.find(l => l.id === id);
 
-                console.log({id});
+                const clima = await busquedas.climaLugar(lugarSel.lat, lugarSel.lng);
+
+                console.clear();
                 console.log('\nInformación de la ciudad\n'.green);
-                console.log('Ciudad', lugarSel.nombre );
+                console.log('Ciudad', lugarSel.nombre.green );
                 console.log('Lat', lugarSel.lat );
                 console.log('Lng', lugarSel.lng );
-                console.log('Temperatura',)
-                console.log('Mínima',)
-                console.log('Máxima', )
+                console.log('Temperatura',clima.temp);
+                console.log('Mínima',clima.min);
+                console.log('Máxima', clima.max);
+                console.log('Como esta el clima: ',clima.desc.green );
                 break;
             case 2:
                     console.log('Presionaste 2 \n')
