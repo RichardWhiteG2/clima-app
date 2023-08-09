@@ -16,17 +16,25 @@ class Busquedas {
     }
 
     async ciudad ( lugar= ''){
+        try {
+            const intance = axios.create({
+                baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
+                params: this.paramsMapbox
+            });
+            
+            const resp = await intance.get();
+            // const resp = await axios.get('')
+            return resp.data.features.map( lugar => ({
+                id: lugar.id,
+                nombre: lugar.place_name,
+                lng: lugar.center[0],
+                lat: lugar.center[1],
+            }))
+            
+        } catch (error) {
+            return [];
+        }
         // Peticion http
-        const intance = axios.create({
-            baseURL: `https://api.mapbox.com/geocoding/v5/mapbox.places/${lugar}.json`,
-            params: this.paramsMapbox
-        });
-        
-        const resp = await intance.get();
-        // const resp = await axios.get('')
-        console.log(resp.data);
-
-        return [];  //Retornar los lugares que coincidan. 
     }
 
 
