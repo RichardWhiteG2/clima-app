@@ -1,4 +1,4 @@
-# Clima APP
+# Weather APP
 
 This is an app made with Node.js that consumes the MAPBOX and OPENWATHER API
 A search is carried out in the MAPBOX api and it only shows 5 places that match the search parameter, later it shows data from that city, consulting the OPENWATHER API, it shows data such as
