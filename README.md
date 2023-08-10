@@ -20,5 +20,5 @@ Execute the node index.js command, in option 1 you can search for the city and i
 ## Preview
 ![Menu](/assets/MenuInicial.png)
 ![Menu](/assets/Busqueda.png)
-![Menu](/assets/ResponseBusqueda.png)
+![Menu](/assets/Responsebusqueda.png)
 ![Menu](/assets/Historial.png)
